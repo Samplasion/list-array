@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Samplasion/lists/issues"
   },
-  "homepage": "https://github.com/Samplasion/lists#readme"
+  "homepage": "https://github.com/Samplasion/lists#readme",
+  "dependencies": {
+    "np": "^3.0.4"
+  }
 }
