@@ -1,12 +1,11 @@
 class List extends Array {
   constructor(...args) {
     super(...args)
-    console.log(typeof this)
   }
   
   static fromArr(arr) {
-	var list = new List(arr.length)
-	arr.forEach(i => list.push(i))
+	var list = new List()
+	list.pushArr(arr)
 	return list
   }
   
@@ -16,6 +15,14 @@ class List extends Array {
 
   random() {
     return this[Math.floor(Math.random()*this.length)]
+  }
+  
+  even() {
+	return List.fromArr(this.filter(i => this.indexOf(i) % 2 == 0))
+  }
+  
+  odd() {
+	return List.fromArr(this.filter(i => this.indexOf(i) % 2 != 0))
   }
 }
 
