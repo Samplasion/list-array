@@ -18,11 +18,23 @@ class List extends Array {
   }
   
   even() {
-	return List.fromArr(this.filter(i => this.indexOf(i) % 2 == 0))
+	var elems = []
+	  , count = 0;
+	for (var i of this) {
+		if (count % 2 == 0) elems.push(i)
+		count++
+	}
+	return List.fromArr(elems)
   }
   
   odd() {
-	return List.fromArr(this.filter(i => this.indexOf(i) % 2 != 0))
+	var elems = []
+	  , count = 0;
+	for (var i of this) {
+		if (count % 2 == 1) elems.push(i)
+		count++
+	}
+	return List.fromArr(elems)
   }
 }
 
