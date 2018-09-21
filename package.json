@@ -1,7 +1,7 @@
 {
-  "name": "lists",
+  "name": "list-array",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Usage",
   "main": "index.js",
   "scripts": {
     "test": "exit"
@@ -13,7 +13,7 @@
   "keywords": [
     "array"
   ],
-  "author": "samplasion",
+  "author": "Samplasion",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Samplasion/lists/issues"
