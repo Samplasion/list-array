@@ -1,4 +1,4 @@
-# Lists (`list-array`, formerly `list`s)
+# Lists (`list-array`s, formerly `list`s)
 
 ## Usage
 
