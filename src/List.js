@@ -78,7 +78,7 @@ class List extends Array {
     for (var i = 0; i < this.length - 2; i++) {
       arr.push(this[i])
     }
-    return list.join(joiner) + ` ${last} ${this.last()}`
+    return arr.join(joiner) + ` ${last} ${this.last()}`
   }
 
   joinAnd(jnr = ', ') {
