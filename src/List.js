@@ -1,3 +1,5 @@
+const deprecate = require('deprecate')
+
 class List extends Array {
   constructor(...args) {
     super(...args)
@@ -56,8 +58,13 @@ class List extends Array {
     return List.fromArr(this.toArray())
   }
 
-  not(cb) {
+  none(cb) {
     return !(this.every(cb))
+  }
+
+  not(cb) {
+    deprecate('This is a deprecated method that will be removed in version 2.0.0')
+    return none(cb);
   }
 }
 
