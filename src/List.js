@@ -7,7 +7,7 @@ class List extends Array {
   
   static fromArray(arr) {
     var list = new List()
-    list.pushArr(arr)
+    list.pushArray(arr)
     return list
   }
   
