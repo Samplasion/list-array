@@ -41,9 +41,23 @@ class List extends Array {
   shuffle() {
     for (let i = this.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [this[i], this[j]] = [this[j], this[i]];
+      [this[i], this[j]] = [this[j], this[i]]
     }
-    return this;
+    return this
+  }
+
+  toArray() {
+    var arr = []
+    for (var i of this) arr.push(i)
+    return arr
+  }
+
+  clone() {
+    return List.fromArr(this.toArray())
+  }
+
+  not(cb) {
+    return !(this.every(cb))
   }
 }
 
