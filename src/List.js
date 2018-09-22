@@ -5,13 +5,13 @@ class List extends Array {
     super(...args)
   }
   
-  static fromArr(arr) {
+  static fromArray(arr) {
     var list = new List()
     list.pushArr(arr)
     return list
   }
   
-  pushArr(arr) {
+  pushArray(arr) {
     arr.forEach(i => this.push(i))
     return this;
   }
@@ -41,7 +41,7 @@ class List extends Array {
   }
 
   shuffle() {
-    for (let i = this.length - 1; i > 0; i--) {
+    for (var i = this.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [this[i], this[j]] = [this[j], this[i]]
     }
@@ -62,9 +62,31 @@ class List extends Array {
     return !(this.every(cb))
   }
 
-  not(cb) {
-    deprecate('This is a deprecated method that will be removed in version 2.0.0')
-    return none(cb);
+  first() {
+    return this[0]
+  }
+
+  last() {
+    return this[this.length-1]
+  }
+
+  joinWithLast(last = ', ', joiner = ', ') {
+    if (this.length == 0) return ''
+    if (this.length == 1) return this[0]
+    if (this.length == 2) return `${this[0]} ${last} ${this[1]}`
+    var arr = new List()
+    for (var i = 0; i < this.length - 2; i++) {
+      arr.push(this[i])
+    }
+    return list.join(joiner) + ` ${last} ${this.last()}`
+  }
+
+  joinAnd(jnr = ', ') {
+    return joinWithLast('and', jnr)
+  }
+
+  joinOr(jnr = ', ') {
+    return joinWithLast('or', jnr)
   }
 }
 
