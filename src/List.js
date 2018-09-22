@@ -75,7 +75,7 @@ class List extends Array {
     if (this.length == 1) return this[0]
     if (this.length == 2) return `${this[0]} ${last} ${this[1]}`
     var arr = new List()
-    for (var i = 0; i < this.length - 2; i++) {
+    for (var i = 0; i <= this.length - 2; i++) {
       arr.push(this[i])
     }
     return arr.join(joiner) + ` ${last} ${this.last()}`
