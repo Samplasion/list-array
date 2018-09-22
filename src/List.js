@@ -82,11 +82,11 @@ class List extends Array {
   }
 
   joinAnd(jnr = ', ') {
-    return joinWithLast('and', jnr)
+    return this.joinWithLast('and', jnr)
   }
 
   joinOr(jnr = ', ') {
-    return joinWithLast('or', jnr)
+    return this.joinWithLast('or', jnr)
   }
 }
 
