@@ -27,7 +27,7 @@ class List extends Array {
       if (count % 2 == 0) elems.push(i)
       count++
     }
-    return List.fromArr(elems)
+    return List.fromArray(elems)
   }
   
   odd() {
@@ -37,7 +37,7 @@ class List extends Array {
       if (count % 2 == 1) elems.push(i)
       count++
     }
-    return List.fromArr(elems)
+    return List.fromArray(elems)
   }
 
   shuffle() {
@@ -87,6 +87,14 @@ class List extends Array {
 
   joinOr(jnr = ', ') {
     return this.joinWithLast('or', jnr)
+  }
+
+  toObject() {
+    var obj = {}
+    for (var i = 0; i < this.length; i++) {
+      obj[i] = this[i]
+    }
+    return obj
   }
 }
 
