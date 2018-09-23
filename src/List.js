@@ -55,7 +55,7 @@ class List extends Array {
   }
 
   clone() {
-    return List.fromArr(this.toArray())
+    return List.fromArray(this.toArray())
   }
 
   none(cb) {
@@ -101,7 +101,7 @@ class List extends Array {
     var ret = new List()
     for (var i = 0; i < this.length; i++) {
       if (cb(this[i])) {
-	ret.push(this.splice(i, 1))
+	ret.push(this.splice(i, 1).first())
       }
     }
     return ret;
