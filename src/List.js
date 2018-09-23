@@ -96,6 +96,21 @@ class List extends Array {
     }
     return obj
   }
+
+  remove(cb) {
+    var ret = new List()
+    for (var i = 0; i < this.length; i++) {
+      if (cb(this[i])) {
+	ret.push(this.splice(i, 1))
+      }
+    }
+    return ret;
+  }
+
+  drop(cb) {
+    this.remove(cb)
+    return this
+  }
 }
 
 module.exports = List
