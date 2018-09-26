@@ -10,6 +10,14 @@ class List extends Array {
     list.pushArray(arr)
     return list
   }
+
+  static isList(arg) {
+    return arg.toString() === '[object List]';
+  }
+
+  toString() {
+    return '[object List]'
+  }
   
   pushArray(arr) {
     arr.forEach(i => this.push(i))
@@ -110,6 +118,14 @@ class List extends Array {
   drop(cb) {
     this.remove(cb)
     return this
+  }
+
+  flatten() {
+    return this.reduce((a, b) => a.concat((List.isList(b)) ? b.flatten() : (Array.isArray(b) ? List.fromArray(b).flatten() : b)), new List())
+  }
+
+  reject(cb) {
+    return this.filter(i => !cb(i));
   }
 }
 
