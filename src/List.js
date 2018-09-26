@@ -12,6 +12,7 @@ class List extends Array {
   }
 
   static isList(arg) {
+    if (!arg) return false
     return arg.toString() === '[object List]';
   }
 
