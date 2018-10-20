@@ -110,7 +110,7 @@ class List extends Array {
     var ret = new List()
     for (var i = 0; i < this.length; i++) {
       if (cb(this[i])) {
-	ret.push(this.splice(i, 1).first())
+	       ret.push(this.splice(i, 1).first())
       }
     }
     return ret;
@@ -127,6 +127,16 @@ class List extends Array {
 
   reject(cb) {
     return this.filter(i => !cb(i));
+  }
+
+  uniq() {
+    var result = new List()
+    this.forEach(function(item) {
+         if(result.indexOf(item) < 0) {
+             result.push(item);
+         }
+    });
+    return result;
   }
 }
 
