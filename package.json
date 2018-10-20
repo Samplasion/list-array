@@ -1,6 +1,6 @@
 {
   "name": "list-array",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "An utility module that adds an Array-like type with features people always wanted.",
   "main": "index.js",
   "scripts": {

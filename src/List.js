@@ -13,7 +13,7 @@ class List extends Array {
 
   static isList(arg) {
     if (!arg) return false
-    return Object.prototype.toString.call(this) === '[object List]';
+    return Object.prototype.toString.call(arg) === '[object List]';
   }
 
   get [Symbol.toStringTag]() {
