@@ -4,7 +4,7 @@ class List extends Array {
   constructor(...args) {
     super(...args)
   }
-  
+
   static fromArray(arr) {
     var list = new List()
     list.pushArray(arr)
@@ -13,13 +13,13 @@ class List extends Array {
 
   static isList(arg) {
     if (!arg) return false
-    return arg.toString() === '[object List]';
+    return Object.prototype.toString.call(arg) === '[object List]';
   }
 
-  toString() {
-    return '[object List]'
+  get [Symbol.toStringTag]() {
+    return 'List'
   }
-  
+
   pushArray(arr) {
     arr.forEach(i => this.push(i))
     return this;
@@ -28,7 +28,7 @@ class List extends Array {
   random() {
     return this[Math.floor(Math.random()*this.length)]
   }
-  
+
   even() {
     var elems = []
       , count = 0;
@@ -38,7 +38,7 @@ class List extends Array {
     }
     return List.fromArray(elems)
   }
-  
+
   odd() {
     var elems = []
       , count = 0;
@@ -71,11 +71,11 @@ class List extends Array {
     return !(this.every(cb))
   }
 
-  first() {
+  get first() {
     return this[0]
   }
 
-  last() {
+  get last() {
     return this[this.length-1]
   }
 
@@ -110,7 +110,7 @@ class List extends Array {
     var ret = new List()
     for (var i = 0; i < this.length; i++) {
       if (cb(this[i])) {
-	ret.push(this.splice(i, 1).first())
+	       ret.push(this.splice(i, 1).first())
       }
     }
     return ret;
@@ -127,6 +127,16 @@ class List extends Array {
 
   reject(cb) {
     return this.filter(i => !cb(i));
+  }
+
+  uniq() {
+    var result = new List()
+    this.forEach(function(item) {
+         if(result.indexOf(item) < 0) {
+             result.push(item);
+         }
+    });
+    return result;
   }
 }
 

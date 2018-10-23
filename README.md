@@ -1,5 +1,7 @@
 # Lists (`list-array`s, formerly `list`s)
 
+An utility module that adds an Array-like type with features people always wanted.
+
 ## Usage
 
 ```js
