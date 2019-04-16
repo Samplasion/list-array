@@ -68,7 +68,7 @@ class List extends Array {
   }
 
   none(cb) {
-    return !(this.every(cb))
+    return this.every(element => !cb(element))
   }
 
   get first() {
@@ -76,6 +76,7 @@ class List extends Array {
   }
 
   get last() {
+    if (this.length == 0) return undefined;
     return this[this.length-1]
   }
 
@@ -110,7 +111,7 @@ class List extends Array {
     var ret = new List()
     for (var i = 0; i < this.length; i++) {
       if (cb(this[i])) {
-	       ret.push(this.splice(i, 1).first())
+	       ret.push(List.from(this.splice(i, 1)).first())
       }
     }
     return ret;
