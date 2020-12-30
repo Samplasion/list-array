@@ -61,4 +61,4 @@ typings/
 .next
 
 # test file
-test.js
+test.ts
