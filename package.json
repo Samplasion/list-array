@@ -1,6 +1,6 @@
 {
   "name": "list-array",
-  "version": "2.5.2",
+  "version": "3.0.0",
   "description": "A lightweight, no-dependency Array drop-in replacement.",
   "main": "index.js",
   "scripts": {
