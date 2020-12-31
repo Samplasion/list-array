@@ -1,24 +1,38 @@
 {
-  "name": "list-array",
-  "version": "3.0.0",
-  "description": "A lightweight, no-dependency Array drop-in replacement.",
-  "main": "index.js",
-  "scripts": {
-    "test": "exit"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Samplasion/lists.git"
-  },
-  "keywords": [
-    "array",
-    "list",
-    "flat"
-  ],
-  "author": "Samplasion <samplasion@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Samplasion/lists/issues"
-  },
-  "homepage": "https://github.com/Samplasion/lists#readme"
+    "name": "list-array",
+    "version": "3.0.0",
+    "description": "A lightweight, no-dependency Array drop-in replacement.",
+    "main": "index.js",
+    "exports": {
+        ".": {
+            "require": "./index.js",
+            "import": "./esm.mjs"
+        }
+    },
+    "scripts": {
+        "build": "tsc",
+        "doc": "typedoc --tsconfig",
+        "prepare": "yarn build && yarn doc",
+        "pub": "yarn prepare && np"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Samplasion/lists.git"
+    },
+    "keywords": [
+        "array",
+        "list",
+        "flat"
+    ],
+    "author": "Samplasion <samplasion@gmail.com>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Samplasion/lists/issues"
+    },
+    "homepage": "https://github.com/Samplasion/lists#readme",
+    "devDependencies": {
+        "np": "^7.1.0",
+        "typedoc": "^0.20.5",
+        "typescript": "^4.1.3"
+    }
 }

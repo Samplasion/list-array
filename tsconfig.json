@@ -9,5 +9,10 @@
         "module": "CommonJS",
         "declaration": true
     },
-    "include": ["src/**/*.ts"]
+    "include": ["src/**/*.ts"],
+    "typedocOptions": {
+        "entryPoints": ["src/List.ts"],
+        "out": "docs",
+        "theme": "minimal"
+    }
 }

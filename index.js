@@ -1,3 +1,3 @@
-const List = require('./dist/List.js')
+const List = require('./dist/List.js').List;
 
-module.exports = List
+module.exports = List;

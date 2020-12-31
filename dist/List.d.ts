@@ -1,4 +1,12 @@
-export default class List<T> extends Array<T> {
+/**
+ * A drop-in array replacement.
+ *
+ * @export
+ * @class List
+ * @extends {Array<T>}
+ * @template T The elements contained in this List
+ */
+export declare class List<T extends any> extends Array<T> {
     constructor(...args: T[]);
     /**
      * Generates a new List from the Array-like object/iterable. Follows the
@@ -25,7 +33,7 @@ export default class List<T> extends Array<T> {
      */
     get [Symbol.toStringTag](): 'List';
     /**
-     * Returns the first element of the List, or `undefined` if the length is 0.
+     * The first element of the List, or `undefined` if the length is 0.
      */
     get first(): T | undefined;
     /**

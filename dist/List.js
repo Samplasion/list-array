@@ -1,5 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.List = void 0;
+/**
+ * A drop-in array replacement.
+ *
+ * @export
+ * @class List
+ * @extends {Array<T>}
+ * @template T The elements contained in this List
+ */
 class List extends Array {
     constructor(...args) {
         super(...args);
@@ -40,7 +49,7 @@ class List extends Array {
         return 'List';
     }
     /**
-     * Returns the first element of the List, or `undefined` if the length is 0.
+     * The first element of the List, or `undefined` if the length is 0.
      */
     get first() {
         return this[0];
@@ -225,4 +234,4 @@ class List extends Array {
         return this.filter((v, i, l) => l.indexOf(v) == i);
     }
 }
-exports.default = List;
+exports.List = List;

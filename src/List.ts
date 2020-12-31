@@ -1,12 +1,12 @@
-// Borrowed from ES2019 typings
-type FlatArray<Arr, Depth extends number> = {
-    "done": Arr,
-    "recur": Arr extends ReadonlyArray<infer InnerArr>
-        ? FlatArray<InnerArr, [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20][Depth]>
-        : Arr
-}[Depth extends -1 ? "done" : "recur"];
-
-export default class List<T> extends Array<T> {
+/**
+ * A drop-in array replacement.
+ *
+ * @export
+ * @class List
+ * @extends {Array<T>}
+ * @template T The elements contained in this List
+ */
+export class List<T extends any> extends Array<T> {
     constructor(...args: T[]) {
         super(...args);
     }
@@ -62,7 +62,7 @@ export default class List<T> extends Array<T> {
     }
 
     /**
-     * Returns the first element of the List, or `undefined` if the length is 0.
+     * The first element of the List, or `undefined` if the length is 0.
      */
     get first(): T | undefined {
         return this[0];
