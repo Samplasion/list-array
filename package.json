@@ -12,8 +12,7 @@
     "scripts": {
         "build": "tsc",
         "doc": "typedoc --tsconfig",
-        "prepare": "yarn build && yarn doc",
-        "pub": "yarn prepare && np"
+        "prep": "yarn build && yarn doc"
     },
     "repository": {
         "type": "git",
