@@ -95,7 +95,7 @@ class List extends Array {
      *
      * @param depth The maximum recursion depth
      */
-    flatten(depth = 1) {
+    flatten /* <U extends any> */(depth = 1) {
         var flattend = new List();
         (function flat(array, depth) {
             for (let el of array) {

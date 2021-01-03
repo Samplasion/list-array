@@ -1,3 +1,5 @@
+type Flattened<T> = T extends any[] ? Flattened<T[number]> : T;
+
 /**
  * A drop-in array replacement.
  *
@@ -126,14 +128,14 @@ export class List<T extends any> extends Array<T> {
      *
      * @param depth The maximum recursion depth
      */
-    flatten<U extends any>(depth = 1): List<U> {
-        var flattend = new List<U>();
+    flatten/* <U extends any> */(depth = 1): /* List<U> */ List<Flattened<T>> {
+        var flattend = new List<Flattened<T>>();
         (function flat(array: List<T>, depth) {
             for (let el of array) {
                 if (Array.isArray(el) && depth > 0) {
                     flat(el as unknown as List<any>, depth - 1);
                 } else {
-                    flattend.push(el as unknown as U);
+                    flattend.push(el as any);
                 }
             }
         })(this, Math.floor(depth) || 1);

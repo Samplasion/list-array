@@ -1,3 +1,4 @@
+declare type Flattened<T> = T extends any[] ? Flattened<T[number]> : T;
 /**
  * A drop-in array replacement.
  *
@@ -74,7 +75,7 @@ export declare class List<T extends any> extends Array<T> {
      *
      * @param depth The maximum recursion depth
      */
-    flatten<U extends any>(depth?: number): List<U>;
+    flatten(depth?: number): List<Flattened<T>>;
     /**
      * Gets an element at the specified index. If the index is below 0, it
      * returns the element starting from the end.
@@ -180,3 +181,4 @@ export declare class List<T extends any> extends Array<T> {
      */
     unique(): List<T>;
 }
+export {};
